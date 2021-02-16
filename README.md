@@ -13,6 +13,8 @@
 | gke_username | cluster user | `string` | `{}` | yes |
 | gke_password | cluster password - min 16 characters | `string` | `{}` | yes |
 | project_id | project id to deploy the cluster | `string` | `{}` | yes |
+| gke_num_nodes | default nodes number 1| `number` | `{}` | no |
+| image | default image - ubuntu | `string` | `{}` | no |
 
 ## Outputs
 
