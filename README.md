@@ -14,6 +14,13 @@
 | gke_password | cluster password - min 16 characters | `string` | `{}` | yes |
 | project_id | project id to deploy the cluster | `string` | `{}` | yes |
 
+## Outputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| GKE Cluster Name | Cluster Name | `string` | `{}` | yes |
+| GKE Cluster Endpoint | Cluster Endpoint | `string` | `{}` | yes |
+| GKE Cluster Cert | Cluster Certificate | `string` | `{}` | yes 
 
 ### How to deploy
 
