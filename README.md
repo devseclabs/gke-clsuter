@@ -30,14 +30,18 @@
 
 ## file - terraform.tfvars
 ```
-gke_username = "nvlabs"
-gke_password = "my-strong-pass"
+cluster_name = "nvlabs"
 project_id = "your-project-id"
 ```
 ## Deploy and Manage your deployment using terraform:
     - init your plugins                 ```terraform init```
     - plan your deployment              ```terraform plan```
     - apply the changes in your cluster ```terraform apply```
+
+## Connect to the Cluster
+```
+gcloud container clusters get-credentials [CLUSTE_NAME] --zone [ZONE] --project [PROJECT_NAME]
+```
 
 ### Clean Up
 - destroy your deployment: ```terraform destroy```

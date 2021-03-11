@@ -1,13 +1,13 @@
 # NETWORK
 # VPC CONF
 resource "google_compute_network" "vpc" {
-  name                    = "${var.name}-vpc"
+  name                    = "${var.prefix}-vpc"
   auto_create_subnetworks = "false"
 }
 
 # SUBNET CONF
 resource "google_compute_subnetwork" "subnet" {
-  name          = "${var.name}-subnet"
+  name          = "${var.prefix}-subnet"
   region        = var.region
   network       = google_compute_network.vpc.name
   ip_cidr_range = var.net_cidr
@@ -17,7 +17,7 @@ resource "google_compute_subnetwork" "subnet" {
 #GKE CONF
 #CLUSTER CONF
 resource "google_container_cluster" "nvcluster" {
-  name     = "${var.name}-gke"
+  name     = var.cluster_name
   location = var.zone
 
   #remove_default_node_pool = true
@@ -26,14 +26,14 @@ resource "google_container_cluster" "nvcluster" {
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
 
-  master_auth {
-    username = var.gke_username
-    password = var.gke_password
+  # master_auth {
+  #   username = var.gke_username
+  #   password = var.gke_password
 
-    client_certificate_config {
-      issue_client_certificate = true
-    }
-  }
+  #   client_certificate_config {
+  #     issue_client_certificate = true
+  #   }
+  # }
 
   node_config {
 

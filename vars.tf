@@ -4,14 +4,18 @@
 variable "project_id" {}
 
 
-variable "name" {
-    default = "lab"
+variable "cluster_name" {
+    default = "lab-gke"
+}
+
+variable "prefix" {
+  default = "lab"
 }
 
 
-variable "gke_username" {}
+# variable "gke_username" {}
 
-variable "gke_password" {}
+# variable "gke_password" {}
 
 variable "gke_num_nodes" {
     default = "1"
