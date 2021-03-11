@@ -10,8 +10,7 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| gke_username | cluster user | `string` | `{}` | yes |
-| gke_password | cluster password - min 16 characters | `string` | `{}` | yes |
+| cluster_name | cluster Name | `string` | `{}` | yes |
 | project_id | project id to deploy the cluster | `string` | `{}` | yes |
 | gke_num_nodes | default nodes number 1| `number` | `{}` | no |
 | image | default image - ubuntu | `string` | `{}` | no |
@@ -22,7 +21,6 @@
 |------|-------------|------|---------|:--------:|
 | GKE Cluster Name | Cluster Name | `string` | `{}` | yes |
 | GKE Cluster Endpoint | Cluster Endpoint | `string` | `{}` | yes |
-| GKE Cluster Cert | Cluster Certificate | `string` | `{}` | yes 
 
 ### How to deploy
 
