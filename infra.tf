@@ -1,13 +1,13 @@
 # NETWORK
 # VPC CONF
 resource "google_compute_network" "vpc" {
-  name                    = "${var.prefix}-vpc"
+  name                    = "${var.cluster_name}-vpc"
   auto_create_subnetworks = "false"
 }
 
 # SUBNET CONF
 resource "google_compute_subnetwork" "subnet" {
-  name          = "${var.prefix}-subnet"
+  name          = "${var.cluster_name}-subnet"
   region        = var.region
   network       = google_compute_network.vpc.name
   ip_cidr_range = var.net_cidr

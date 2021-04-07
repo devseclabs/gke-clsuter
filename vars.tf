@@ -8,11 +8,6 @@ variable "cluster_name" {
     default = "lab-gke"
 }
 
-variable "prefix" {
-  default = "lab"
-}
-
-
 # variable "gke_username" {}
 
 # variable "gke_password" {}
