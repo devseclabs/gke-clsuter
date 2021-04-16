@@ -40,16 +40,27 @@ cluster_name = "nvlabs"
 project_id = "your-project-id"
 ```
 
-- Step 4 : Save your changes and download all plugins with Terraform Init - run  ```terraform init```
-- Step 5: Deploy the cluster with Terraform Apply (plan/apply) - run ```terraform apply```
+- Step 4 : Save your changes and download all plugins with Terraform Init - run  
+```
+terraform init
+```
+- Step 5: Deploy the cluster with Terraform Apply (plan/apply) - run 
+```
+terraform apply
+```
 - Step 6: then get our gke credentials configuration, running this gcloud command:
     ```gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [project-id]```
 
 
 ### Optional - Using tfvars:
 
-- Create or  the terraform vars file:
-
+- Create or update the terraform vars file:
+```
+#Terraform Conf File
+cluster_name = "nvlabs"
+project_id = "my-project-name"
+```
+- apply your changes from the root folder, without use modules.
 
 
 ### Clean Up
