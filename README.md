@@ -1,12 +1,12 @@
 # Terraform - GKE Cluster Deployment
 
-## Versions
+## Version Tested:
 
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.0|
 
-## Inputs - terraform.tfvars
+## Module Inputs - (optional - terraform.tfvars)
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -22,24 +22,35 @@
 | GKE Cluster Name | Cluster Name | `string` | `{}` | yes |
 | GKE Cluster Endpoint | Cluster Endpoint | `string` | `{}` | yes |
 
-### How to deploy
+## Steps:
+- Step 1: Authenticate with your google account:
+    ```
+    gcloud auth application-default login
+    gcloud config set project PROJECT_ID
+    ```
+ 
+- Step 2 : Clone this repo: 
+```
+git clone https://github.com/devseclabs/gke-cluster.git
+```
+- Step 3: if you are going to use our gke module, move to module-example ```cd module-example``` and edit the gke.tf file with appropriate values:
 
-- Create the terraform vars file:
-
-## file - terraform.tfvars
 ```
 cluster_name = "nvlabs"
 project_id = "your-project-id"
 ```
-## Deploy and Manage your deployment using terraform:
-    - init your plugins                 ```terraform init```
-    - plan your deployment              ```terraform plan```
-    - apply the changes in your cluster ```terraform apply```
 
-## Connect to the Cluster
-```
-gcloud container clusters get-credentials [CLUSTE_NAME] --zone [ZONE] --project [PROJECT_NAME]
-```
+- Step 4 : Save your changes and download all plugins with Terraform Init - run  ```terraform init```
+- Step 5: Deploy the cluster with Terraform Apply (plan/apply) - run ```terraform apply```
+- Step 6: then get our gke credentials configuration, running this gcloud command:
+    ```gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [project-id]```
+
+
+### Optional - Using tfvars:
+
+- Create or  the terraform vars file:
+
+
 
 ### Clean Up
 - destroy your deployment: ```terraform destroy```
