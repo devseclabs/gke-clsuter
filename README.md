@@ -24,10 +24,15 @@
 
 ## Steps:
 - Step 1: Authenticate with your google account:
-    gcloud init
+    ```
     gcloud auth application-default login
+    gcloud config set project PROJECT_ID
+    ```
  
-- Step 2 : Clone this repo: ```git clone https://github.com/devseclabs/gke-cluster.git```
+- Step 2 : Clone this repo: 
+```
+git clone https://github.com/devseclabs/gke-cluster.git
+```
 - Step 3: if you are going to use our gke module, move to module-example ```cd module-example``` and edit the gke.tf file with appropriate values:
 
 ```
