@@ -49,7 +49,12 @@ terraform init
 terraform apply
 ```
 - Step 6: then get our gke credentials configuration, running this gcloud command:
-    ```gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [project-id]```
+    ```
+    #get clusters
+    gcloud container clusters list
+    # get context
+    gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [project-id]
+    ```
 
 
 ### Optional - Using tfvars:
